@@ -1,9 +1,11 @@
 "use client";
 import Draggable from "react-draggable";
 import { useRef } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const nodeRef = useRef(null);
+  const router = useRouter();
 
   return (
     <>
@@ -18,28 +20,36 @@ export default function Home() {
 
         <input
           id="url-input"
-          placeholder="Masukkan URL Aplikasi"
-          className="bg-white rounded-full px-6 py-4 text-xl w-full max-w-2xl shadow-sm/20"
+          onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
+            if (e.key === "Enter") router.push("/result");
+          }}
+          placeholder="https://play.google.com/store/apps/details?id="
+          className="bg-white rounded-full px-6 py-4 text-xl w-full max-w-5xl shadow-sm/20"
         />
 
         <div className="flex justify-center w-full px-5 flex-col md:flex-row gap-4 mt-2">
-          <button className="w-full md:w-fit bg-[#F3DBC4] hover:bg-[#F3DBC4]/60 cursor-pointer rounded-md text-lg px-4 py-2 font-semibold">
+          <button
+            onClick={() => router.push("/result")}
+            className="w-full md:w-fit bg-[#F3DBC4] hover:bg-[#F3DBC4]/60 cursor-pointer rounded-md text-lg px-4 py-2"
+          >
             Cari Tahu Review
           </button>
-          <button className="bg-[#F3DBC4] hover:bg-[#F3DBC4]/60 cursor-pointer rounded-md text-lg px-4 py-2 font-semibold">
+          <a
+            href="/about"
+            className="bg-[#F3DBC4] hover:bg-[#F3DBC4]/60 cursor-pointer rounded-md text-lg px-4 py-2"
+          >
             About Us
-          </button>
+          </a>
         </div>
       </div>
 
-      {/* Floating draggable card */}
       <Draggable nodeRef={nodeRef}>
         <div
           ref={nodeRef}
           className="fixed bottom-5 right-5 bg-white/80 backdrop-blur-md rounded-xl shadow-xl p-5 w-100 cursor-move"
         >
           <p className="text-sm opacity-80">
-            ⭐ <b>4.6</b> — 70% positif | 20% netral | 10% negatif
+            ⭐ <b>5.0</b>
           </p>
           <p className="text-sm mt-2 opacity-70 italic">
             “game ini sangat seru dan banyak map atau game tapi mohon diperbaiki
