@@ -3,7 +3,7 @@
 Review Playstore adalah aplikasi untuk menganalisis dan mengekstrak insight dari ulasan aplikasi di Google Play Store.
 Aplikasi ini dibangun menggunakan **Next.js** dan **Kolosal AI**, sehingga mampu memberikan analisis cepat, ringkas, dan cerdas berdasarkan data ulasan pengguna.
 
-Video Demo:
+## Video Demo
 [![Demo Video](https://i.ytimg.com/vi/R2Xq7HL0DnQ/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDxZzHWSHxWuB1wOC9BiBIuKN9gCg)](https://www.youtube.com/watch?v=R2Xq7HL0DnQ)
 
 ---
